@@ -1,4 +1,4 @@
-define('accurate-timer', function () {
+define('accurate-timer', ['EventEmitter'], function (EventEmitter) {
   'use strict';
 
   var AccurateTimer = function () {
@@ -9,7 +9,9 @@ define('accurate-timer', function () {
     this.elapsed = null;
   };
 
-  AccurateTimer.EVENT_TICK = 'tick';
+  AccurateTimer.prototype = new EventEmitter();
+
+  AccurateTimer.TICK = 'tick';
 
   AccurateTimer.prototype.start = function () {
     this.pause();
@@ -21,7 +23,7 @@ define('accurate-timer', function () {
 
   AccurateTimer.prototype.tick = function () {
     this.elapsed = Date.now() - this.intervalStart;
-    this.dispatchEvent(new CustomEvent(AccurateTimer.EVENT_TICK));
+    this.emitEvent(AccurateTimer.TICK);
   };
 
   AccurateTimer.prototype.pause = function () {
