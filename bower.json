@@ -3,5 +3,6 @@
   "version": "0",
   "main": "./src/accurate-timer.js",
   "dependencies": {
+    "eventEmitter":"~4.2.7"
   }
 }
