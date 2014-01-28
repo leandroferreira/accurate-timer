@@ -1,0 +1,7 @@
+{
+  "name": "accurate-timer",
+  "version": "0",
+  "main": "./src/accurate-timer.js",
+  "dependencies": {
+  }
+}
