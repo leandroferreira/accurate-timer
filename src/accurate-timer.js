@@ -19,6 +19,7 @@ define('accurate-timer', ['EventEmitter'], function (EventEmitter) {
       this.intervalStart = Date.now();
     }
     this.interval = setInterval(this.tick.bind(this), 1000 / this.fps);
+    this.tick();
   };
 
   AccurateTimer.prototype.tick = function () {
