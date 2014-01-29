@@ -36,6 +36,7 @@ define('accurate-timer', ['EventEmitter'], function (EventEmitter) {
   AccurateTimer.prototype.stop = function () {
     this.pause();
     this.elapsed = 0;
+    this.intervalStart = null;
   };
 
   return AccurateTimer;
